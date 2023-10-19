@@ -9,6 +9,6 @@ interface Post {
 
 export async function getPostsForUser(userId: number) {
   return apiClient
-    .get<Post>(`users/${userId}/posts`)
+    .get<Post[]>(`users/${userId}/posts`)
     .then(responseBody);
 } 
