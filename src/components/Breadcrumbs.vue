@@ -12,11 +12,13 @@ const props = defineProps<{
 
 const { links } = toRefs(props); 
 
+const renderDisplay = (link: Link) => link.text || link.href; 
+
 
 </script>
 <template>
   <div class="breadcrumbs">
-    <a v-for="link of links" :key="link.href" :href="link.href">{{ link.text }}</a>
+    <a v-for="link of links" :key="link.href" :href="link.href">{{ renderDisplay(link) }}</a>
   </div>
 </template>
 
